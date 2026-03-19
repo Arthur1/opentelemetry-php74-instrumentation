@@ -1,0 +1,33 @@
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.76.0
+    ports:
+      - "16686:16686"
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+
+  app:
+    build:
+      context: ../..
+      dockerfile: example/laravel8/Dockerfile
+    volumes:
+      - ../../src/Instrumentation/Laravel:/usr/src/instrumentation-laravel
+      - ./src:/app
+    environment:
+      - OTEL_SERVICE_NAME=laravel8-php74-demo
+      - OTEL_TRACES_EXPORTER=otlp
+      - OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318
+      - OTEL_PHP_AUTOLOAD_ENABLED=true
+      - OTEL_PHP_TRACES_PROCESSOR=simple
+    depends_on:
+      - jaeger
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - app
