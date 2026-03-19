@@ -1,0 +1,23 @@
+{
+  "name": "opentelemetry-php74/instrumentation-laravel",
+  "description": "Laravel auto-instrumentation using opentelemetry_php74 extension",
+  "type": "library",
+  "license": "Apache-2.0",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4",
+    "ext-opentelemetry_php74": "*",
+    "open-telemetry/api": "^1.0",
+    "open-telemetry/sdk": "^1.0",
+    "open-telemetry/sem-conv": "^1.0",
+    "laravel/framework": "^8.0 || ^9.0"
+  },
+  "autoload": {
+    "files": [
+      "_register.php"
+    ],
+    "psr-4": {
+      "OpenTelemetryPHP74\\Instrumentation\\Laravel\\": "src/"
+    }
+  }
+}
