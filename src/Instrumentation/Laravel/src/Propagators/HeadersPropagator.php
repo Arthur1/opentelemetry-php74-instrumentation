@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+/**
+ * Based on code from opentelemetry-php
+ * Copyright 2019 opentelemetry-php contributors
+ * Licensed under the Apache License, Version 2.0
+ */
+
 namespace OpenTelemetryPHP74\Instrumentation\Laravel\Propagators;
 
 use function assert;

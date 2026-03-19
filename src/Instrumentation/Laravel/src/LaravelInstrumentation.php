@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Based on code from open-telemetry/opentelemetry-php-contrib
+ * Copyright 2021 opentelemetry-php-contrib contributors
+ * Licensed under the Apache License, Version 2.0
+ */
+
 declare(strict_types=1);
 
 namespace OpenTelemetryPHP74\Instrumentation\Laravel;
