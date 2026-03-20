@@ -9,7 +9,7 @@ services:
   app:
     build:
       context: ../..
-      dockerfile: example/laravel8/Dockerfile
+      dockerfile: examples/laravel8/Dockerfile
     volumes:
       - ../../src/Instrumentation/Laravel:/usr/src/instrumentation-laravel
       - ./src:/app

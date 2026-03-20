@@ -27,7 +27,7 @@ RUN phpize \
 WORKDIR /app
 
 # Copy entrypoint script
-COPY example/laravel8/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY examples/laravel8/entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
