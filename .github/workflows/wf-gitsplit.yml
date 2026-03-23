@@ -1,0 +1,30 @@
+name: gitsplit
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  gitsplit:
+    runs-on: ubuntu-latest
+    steps:
+      - id: github_token
+        uses: actions/create-github-app-token@f8d387b68d61c58ab83c6c016672934102569859 # v3.0.0
+        with:
+          app-id: 364898
+          private-key: ${{ secrets.ARTHUR1_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            opentelemetry-php74-auto-laravel
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Split repositories
+        uses: docker://jderusse/gitsplit:latest@sha256:ca619e08d0608d7ab8067be02db13409ec63a0e241c6308be42593f0c0ac705d
+        with:
+          args: gitsplit
+        env:
+          GH_TOKEN: ${{ steps.github_token.outputs.token }}

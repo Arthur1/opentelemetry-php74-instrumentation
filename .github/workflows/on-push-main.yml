@@ -1,0 +1,10 @@
+name: CI for main branch
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  gitsplit:
+    uses: ./.github/workflows/wf-gitsplit.yml
+    secrets: inherit

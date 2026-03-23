@@ -1,4 +1,4 @@
-# opentelemetry-auto-laravel-php74
+# opentelemetry-php74-auto-laravel
 
 ![demo trace](./docs/img/demo.png)
 

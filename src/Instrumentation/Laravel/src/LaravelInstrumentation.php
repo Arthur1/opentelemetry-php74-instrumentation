@@ -24,7 +24,7 @@ class LaravelInstrumentation
     public static function register(): void
     {
         $instrumentation = new CachedInstrumentation(
-            'arthur1/opentelemetry-auto-laravel-php74',
+            'arthur1/opentelemetry-php74-auto-laravel',
             null
         );
 

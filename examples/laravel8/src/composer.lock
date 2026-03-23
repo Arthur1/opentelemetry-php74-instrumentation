@@ -2649,7 +2649,7 @@
             "time": "2024-01-23T21:47:17+00:00"
         },
         {
-            "name": "arthur1/opentelemetry-auto-laravel-php74",
+            "name": "arthur1/opentelemetry-php74-auto-laravel",
             "version": "dev-main",
             "dist": {
                 "type": "path",
@@ -8662,7 +8662,7 @@
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": {
-        "arthur1/opentelemetry-auto-laravel-php74": 20
+        "arthur1/opentelemetry-php74-auto-laravel": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

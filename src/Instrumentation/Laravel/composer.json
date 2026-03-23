@@ -1,5 +1,5 @@
 {
-  "name": "arthur1/opentelemetry-auto-laravel-php74",
+  "name": "arthur1/opentelemetry-php74-auto-laravel",
   "description": "OpenTelemetry auto-instrumentation for Laravel with PHP 7.4",
   "type": "library",
   "license": "MIT",
