@@ -1,9 +1,13 @@
 <?php
 
 /**
- * Based on code from open-telemetry/opentelemetry-php-contrib
+ * Based on code from opentelemetry/opentelemetry-php-contrib
  * Copyright 2021 opentelemetry-php-contrib contributors
  * Licensed under the Apache License, Version 2.0
+ * 
+ * Modifications:
+ * - Added support for PHP 7.4
+ * - Updated to use OpenTelemetry extension for PHP 7.4
  */
 
 declare(strict_types=1);
@@ -20,7 +24,7 @@ class LaravelInstrumentation
     public static function register(): void
     {
         $instrumentation = new CachedInstrumentation(
-            'Arthur1/opentelemetry-php74/instrumentation-laravel',
+            'arthur1/opentelemetry-auto-laravel-php74',
             null
         );
 
