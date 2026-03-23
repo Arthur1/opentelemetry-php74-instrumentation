@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c808004ea3af8e7404f693a7ed6da22c",
+    "content-hash": "4ab4f45c783b2b41f0ca32b10284651d",
     "packages": [
+        {
+            "name": "arthur1/opentelemetry-php74-auto-laravel",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Arthur1/opentelemetry-php74-auto-laravel.git",
+                "reference": "cd95528a919b943c4dfd00d8414e01270961e226"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Arthur1/opentelemetry-php74-auto-laravel/zipball/cd95528a919b943c4dfd00d8414e01270961e226",
+                "reference": "cd95528a919b943c4dfd00d8414e01270961e226",
+                "shasum": ""
+            },
+            "require": {
+                "ext-opentelemetry_php74": "*",
+                "laravel/framework": "^6.0 || ^7.0 || ^8.0",
+                "open-telemetry/api": "^1.0",
+                "open-telemetry/sdk": "^1.0",
+                "open-telemetry/sem-conv": "^1.0",
+                "php": "^7.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "_register.php"
+                ],
+                "psr-4": {
+                    "OpenTelemetryPHP74\\Instrumentation\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "OpenTelemetry auto-instrumentation for Laravel with PHP 7.4",
+            "support": {
+                "source": "https://github.com/Arthur1/opentelemetry-php74-auto-laravel/tree/main"
+            },
+            "time": "2026-03-23T10:03:18+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.4.0",
@@ -1501,16 +1543,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.8.1",
+            "version": "2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "84b1ca48347efdbe775426f108622a42735a6579"
+                "reference": "59fb075d2101740c337c7216e3f32b36c204218b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/84b1ca48347efdbe775426f108622a42735a6579",
-                "reference": "84b1ca48347efdbe775426f108622a42735a6579",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/59fb075d2101740c337c7216e3f32b36c204218b",
+                "reference": "59fb075d2101740c337c7216e3f32b36c204218b",
                 "shasum": ""
             },
             "require": {
@@ -1604,7 +1646,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-05T21:37:03+00:00"
+            "time": "2026-03-19T13:16:38+00:00"
         },
         {
             "name": "league/config",
@@ -2649,39 +2691,6 @@
             "time": "2024-01-23T21:47:17+00:00"
         },
         {
-            "name": "arthur1/opentelemetry-php74-auto-laravel",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "/usr/src/instrumentation-laravel",
-                "reference": "78393a13bfad6240eaf3c4ceb00d4ba3e1f981e0"
-            },
-            "require": {
-                "ext-opentelemetry_php74": "*",
-                "laravel/framework": "^8.0 || ^9.0",
-                "open-telemetry/api": "^1.0",
-                "open-telemetry/sdk": "^1.0",
-                "open-telemetry/sem-conv": "^1.0",
-                "php": "^7.4"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "_register.php"
-                ],
-                "psr-4": {
-                    "OpenTelemetryPHP74\\Instrumentation\\Laravel\\": "src/"
-                }
-            },
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "Laravel auto-instrumentation using opentelemetry_php74 extension",
-            "transport-options": {
-                "relative": false
-            }
-        },
-        {
             "name": "opis/closure",
             "version": "3.7.0",
             "source": {
@@ -3477,16 +3486,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.21",
+            "version": "v0.12.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "4821fab5b7cd8c49a673a9fd5754dc9162bb9e97"
+                "reference": "3be75d5b9244936dd4ac62ade2bfb004d13acf0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4821fab5b7cd8c49a673a9fd5754dc9162bb9e97",
-                "reference": "4821fab5b7cd8c49a673a9fd5754dc9162bb9e97",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3be75d5b9244936dd4ac62ade2bfb004d13acf0f",
+                "reference": "3be75d5b9244936dd4ac62ade2bfb004d13acf0f",
                 "shasum": ""
             },
             "require": {
@@ -3550,9 +3559,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.21"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.22"
             },
-            "time": "2026-03-06T21:21:28+00:00"
+            "time": "2026-03-22T23:03:24+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

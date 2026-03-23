@@ -64,14 +64,11 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "beta",
-    "prefer-stable": true,
-    "repositories": {
-        "instrumentation-laravel": {
-            "type": "path",
-            "url": "/usr/src/instrumentation-laravel"
-        }
-    }
+    "prefer-stable": true
 }
