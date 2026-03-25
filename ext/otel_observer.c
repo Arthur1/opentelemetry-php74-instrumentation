@@ -199,6 +199,8 @@ static void exception_isolation_handle_exception(zend_object *suppressed,
     zval return_value;
     zval *message;
 
+    ZVAL_UNDEF(&return_value);
+
     if (suppressed == NULL) {
         return;
     }
@@ -215,9 +217,7 @@ static void exception_isolation_handle_exception(zend_object *suppressed,
                      type, zval_get_chars(class_name),
                      zval_get_chars(function_name), zval_get_chars(message));
 
-    if (message != NULL) {
-        ZVAL_DEREF(message);
-    }
+    zval_ptr_dtor(&return_value);
 
     OBJ_RELEASE(suppressed);
 }
