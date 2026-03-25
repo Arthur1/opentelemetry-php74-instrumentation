@@ -13,7 +13,7 @@ ZEND_END_MODULE_GLOBALS(opentelemetry_php74)
 
 ZEND_EXTERN_MODULE_GLOBALS(opentelemetry_php74)
 
-#define OTEL_G(v) ZEND_MODULE_GLOBALS_ACCESSOR(opentelemetry_php74, v)
+#define OTELPHP74_G(v) ZEND_MODULE_GLOBALS_ACCESSOR(opentelemetry_php74, v)
 
 #define PHP_OPENTELEMETRY_PHP74_VERSION "0.1.0"
 

@@ -31,7 +31,7 @@ static int check_conflict(HashTable *registry, const char *extension_name) {
 
 static void check_conflicts(void) {
     int conflict_found = 0;
-    char *input = OTEL_G(conflicts);
+    char *input = OTELPHP74_G(conflicts);
 
     if (!input || !*input) {
         return;
@@ -67,7 +67,7 @@ static void check_conflicts(void) {
         conflict_found = 1;
     }
 
-    OTEL_G(disabled) = conflict_found;
+    OTELPHP74_G(disabled) = conflict_found;
 }
 
 ZEND_DECLARE_MODULE_GLOBALS(opentelemetry_php74)
@@ -121,7 +121,7 @@ PHP_MINIT_FUNCTION(opentelemetry_php74) {
 
     check_conflicts();
 
-    if (!OTEL_G(disabled)) {
+    if (!OTELPHP74_G(disabled)) {
         opentelemetry_observer_init(INIT_FUNC_ARGS_PASSTHRU);
     }
 
@@ -129,7 +129,7 @@ PHP_MINIT_FUNCTION(opentelemetry_php74) {
 }
 
 PHP_MSHUTDOWN_FUNCTION(opentelemetry_php74) {
-    if (!OTEL_G(disabled)) {
+    if (!OTELPHP74_G(disabled)) {
         opentelemetry_observer_shutdown(SHUTDOWN_FUNC_ARGS_PASSTHRU);
     }
 
@@ -141,7 +141,7 @@ PHP_MSHUTDOWN_FUNCTION(opentelemetry_php74) {
 PHP_MINFO_FUNCTION(opentelemetry_php74) {
     php_info_print_table_start();
     php_info_print_table_row(2, "opentelemetry_php74 hooks",
-                             OTEL_G(disabled) ? "disabled (conflict)"
+                             OTELPHP74_G(disabled) ? "disabled (conflict)"
                                               : "enabled");
     php_info_print_table_row(2, "extension version",
                              PHP_OPENTELEMETRY_PHP74_VERSION);

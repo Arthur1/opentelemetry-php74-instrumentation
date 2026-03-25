@@ -274,7 +274,7 @@ static void find_method_observers(HashTable *ht, zend_class_entry *ce,
 
     zend_hash_init(&type_visited_lookup, 8, NULL, NULL, 0);
     lc = zend_string_tolower(fn);
-    lookup = zend_hash_find_ptr(OTEL_G(observer_class_lookup), lc);
+    lookup = zend_hash_find_ptr(OTELPHP74_G(observer_class_lookup), lc);
     zend_string_release(lc);
     if (lookup) {
         find_class_observers(lookup, &type_visited_lookup, ce, pre_hooks,
@@ -291,7 +291,7 @@ static otel_observer *resolve_observer(zend_execute_data *execute_data) {
     }
 
     /* Check if globals are initialized (RINIT may not have been called yet) */
-    if (OTEL_G(observer_class_lookup) == NULL) {
+    if (OTELPHP74_G(observer_class_lookup) == NULL) {
         return NULL;
     }
 
@@ -302,12 +302,12 @@ static otel_observer *resolve_observer(zend_execute_data *execute_data) {
                     (llist_dtor_func_t)zval_ptr_dtor, 0);
 
     if (fbc->common.scope) {
-        find_method_observers(OTEL_G(observer_class_lookup),
+        find_method_observers(OTELPHP74_G(observer_class_lookup),
                               fbc->common.scope, fbc->common.function_name,
                               &observer_instance.pre_hooks,
                               &observer_instance.post_hooks);
     } else {
-        find_observers(OTEL_G(observer_function_lookup),
+        find_observers(OTELPHP74_G(observer_function_lookup),
                        fbc->common.function_name,
                        &observer_instance.pre_hooks,
                        &observer_instance.post_hooks);
@@ -630,15 +630,15 @@ static void add_method_observer(HashTable *ht, zend_string *cn,
 
 zend_bool add_observer(zend_string *cn, zend_string *fn, zval *pre_hook,
                        zval *post_hook) {
-    if (OTEL_G(observer_class_lookup) == NULL) {
+    if (OTELPHP74_G(observer_class_lookup) == NULL) {
         return 0;
     }
 
     if (cn) {
-        add_method_observer(OTEL_G(observer_class_lookup), cn, fn, pre_hook,
+        add_method_observer(OTELPHP74_G(observer_class_lookup), cn, fn, pre_hook,
                             post_hook);
     } else {
-        add_function_observer(OTEL_G(observer_function_lookup), fn, pre_hook,
+        add_function_observer(OTELPHP74_G(observer_function_lookup), fn, pre_hook,
                               post_hook);
     }
 
@@ -646,28 +646,28 @@ zend_bool add_observer(zend_string *cn, zend_string *fn, zval *pre_hook,
 }
 
 void observer_globals_init(void) {
-    if (!OTEL_G(observer_class_lookup)) {
-        ALLOC_HASHTABLE(OTEL_G(observer_class_lookup));
-        zend_hash_init(OTEL_G(observer_class_lookup), 8, NULL,
+    if (!OTELPHP74_G(observer_class_lookup)) {
+        ALLOC_HASHTABLE(OTELPHP74_G(observer_class_lookup));
+        zend_hash_init(OTELPHP74_G(observer_class_lookup), 8, NULL,
                        destroy_observer_class_lookup, 0);
     }
-    if (!OTEL_G(observer_function_lookup)) {
-        ALLOC_HASHTABLE(OTEL_G(observer_function_lookup));
-        zend_hash_init(OTEL_G(observer_function_lookup), 8, NULL,
+    if (!OTELPHP74_G(observer_function_lookup)) {
+        ALLOC_HASHTABLE(OTELPHP74_G(observer_function_lookup));
+        zend_hash_init(OTELPHP74_G(observer_function_lookup), 8, NULL,
                        destroy_observer_lookup, 0);
     }
 }
 
 void observer_globals_cleanup(void) {
-    if (OTEL_G(observer_class_lookup)) {
-        zend_hash_destroy(OTEL_G(observer_class_lookup));
-        FREE_HASHTABLE(OTEL_G(observer_class_lookup));
-        OTEL_G(observer_class_lookup) = NULL;
+    if (OTELPHP74_G(observer_class_lookup)) {
+        zend_hash_destroy(OTELPHP74_G(observer_class_lookup));
+        FREE_HASHTABLE(OTELPHP74_G(observer_class_lookup));
+        OTELPHP74_G(observer_class_lookup) = NULL;
     }
-    if (OTEL_G(observer_function_lookup)) {
-        zend_hash_destroy(OTEL_G(observer_function_lookup));
-        FREE_HASHTABLE(OTEL_G(observer_function_lookup));
-        OTEL_G(observer_function_lookup) = NULL;
+    if (OTELPHP74_G(observer_function_lookup)) {
+        zend_hash_destroy(OTELPHP74_G(observer_function_lookup));
+        FREE_HASHTABLE(OTELPHP74_G(observer_function_lookup));
+        OTELPHP74_G(observer_function_lookup) = NULL;
     }
 }
 
