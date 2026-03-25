@@ -7,7 +7,6 @@ extern zend_module_entry opentelemetry_php74_module_entry;
 ZEND_BEGIN_MODULE_GLOBALS(opentelemetry_php74)
     HashTable *observer_class_lookup;
     HashTable *observer_function_lookup;
-    HashTable *observer_aggregates;
     char *conflicts;
     int disabled;
 ZEND_END_MODULE_GLOBALS(opentelemetry_php74)

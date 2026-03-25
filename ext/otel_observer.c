@@ -656,10 +656,6 @@ void observer_globals_init(void) {
         zend_hash_init(OTEL_G(observer_function_lookup), 8, NULL,
                        destroy_observer_lookup, 0);
     }
-    if (!OTEL_G(observer_aggregates)) {
-        ALLOC_HASHTABLE(OTEL_G(observer_aggregates));
-        zend_hash_init(OTEL_G(observer_aggregates), 8, NULL, NULL, 0);
-    }
 }
 
 void observer_globals_cleanup(void) {
@@ -672,11 +668,6 @@ void observer_globals_cleanup(void) {
         zend_hash_destroy(OTEL_G(observer_function_lookup));
         FREE_HASHTABLE(OTEL_G(observer_function_lookup));
         OTEL_G(observer_function_lookup) = NULL;
-    }
-    if (OTEL_G(observer_aggregates)) {
-        zend_hash_destroy(OTEL_G(observer_aggregates));
-        FREE_HASHTABLE(OTEL_G(observer_aggregates));
-        OTEL_G(observer_aggregates) = NULL;
     }
 }
 
