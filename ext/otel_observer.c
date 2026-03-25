@@ -252,9 +252,8 @@ static void find_class_observers(HashTable *ht,
         if (zend_hash_exists(type_visited_lookup, ce->name)) {
             continue;
         }
-        if (find_observers(ht, ce->name, pre_hooks, post_hooks)) {
-            zend_hash_add_empty_element(type_visited_lookup, ce->name);
-        }
+        zend_hash_add_empty_element(type_visited_lookup, ce->name);
+        find_observers(ht, ce->name, pre_hooks, post_hooks);
         {
             uint32_t i;
             for (i = 0; i < ce->num_interfaces; i++) {
