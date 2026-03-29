@@ -10,7 +10,7 @@
     "repositories": [
       {
         "type": "path",
-        "url": "vendor/kmuto/opentelemetry-php74-auto-pdo"
+        "url": "kmuto/opentelemetry-php74-auto-pdo"
       }
     ],
     "require": {

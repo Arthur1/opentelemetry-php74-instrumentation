@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bf5d51f8d0e56190e53a44de8e7a570",
+    "content-hash": "34391a5e566e069afc85a70eeae0b974",
     "packages": [
         {
             "name": "arthur1/opentelemetry-php74-auto-laravel",
@@ -688,16 +688,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.25.8",
+            "version": "v3.25.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "57d440fc54a00fda5b8781e8d9bf0140ea6d8e52"
+                "reference": "7430ad4744937be8ffcc0259a8e921bcf26589f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/57d440fc54a00fda5b8781e8d9bf0140ea6d8e52",
-                "reference": "57d440fc54a00fda5b8781e8d9bf0140ea6d8e52",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/7430ad4744937be8ffcc0259a8e921bcf26589f3",
+                "reference": "7430ad4744937be8ffcc0259a8e921bcf26589f3",
                 "shasum": ""
             },
             "require": {
@@ -726,9 +726,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.8"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.25.9"
             },
-            "time": "2025-05-27T21:04:40+00:00"
+            "time": "2026-03-25T20:44:55+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1181,7 +1181,7 @@
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "vendor/kmuto/opentelemetry-php74-auto-pdo",
+                "url": "kmuto/opentelemetry-php74-auto-pdo",
                 "reference": "d4503c77da39f511c7ab8e6d8fce421e4736056f"
             },
             "require": {
