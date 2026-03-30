@@ -22,7 +22,7 @@ class LogWatcher extends Watcher
     public function __construct(
         CachedInstrumentation $instrumentation
     ) {
-      $this->instrumentation = $instrumentation;
+        $this->instrumentation = $instrumentation;
     }
 
     /** @psalm-suppress UndefinedInterfaceMethod */
