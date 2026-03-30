@@ -47,13 +47,13 @@ class QueryWatcher extends Watcher
             ->startSpan();
 
         $attributes = [
-            TraceAttributes::DB_SYSTEM_NAME => $query->connection->getDriverName(),
-            TraceAttributes::DB_NAMESPACE => $query->connection->getDatabaseName(),
-            TraceAttributes::DB_OPERATION_NAME => $operationName,
+            'db.system.name' => $query->connection->getDriverName(),
+            'db.namespace' => $query->connection->getDatabaseName(),
+            'db.operation.name' => $operationName,
             //TraceAttributes::DB_USER => $query->connection->getConfig('username'),
         ];
 
-        $attributes[TraceAttributes::DB_QUERY_TEXT] = $query->sql;
+        $attributes['db.query.text'] = $query->sql;
         /** @psalm-suppress PossiblyInvalidArgument */
         $span->setAttributes($attributes);
         $span->end($nowInNs);

@@ -57,10 +57,10 @@ class RedisCommandWatcher extends Watcher
 
         // See https://opentelemetry.io/docs/specs/semconv/database/redis/
         $attributes = [
-            TraceAttributes::DB_SYSTEM_NAME => TraceAttributeValues::DB_SYSTEM_REDIS,
-            TraceAttributes::DB_NAMESPACE => $this->fetchDbIndex($event->connection),
-            TraceAttributes::DB_OPERATION_NAME => $operationName,
-            TraceAttributes::DB_QUERY_TEXT => Serializer::serializeCommand($event->command, $event->parameters),
+            'db.system.name' => TraceAttributeValues::DB_SYSTEM_REDIS,
+            'db.namespace' => $this->fetchDbIndex($event->connection),
+            'db.operation.name' => $operationName,
+            'db.query.text' => Serializer::serializeCommand($event->command, $event->parameters),
             TraceAttributes::SERVER_ADDRESS => $this->fetchDbHost($event->connection),
         ];
 
